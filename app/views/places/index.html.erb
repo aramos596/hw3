@@ -2,8 +2,8 @@
 
 <% places = Place.all %>
 
-
+<p> You have been to <%= places.count %> places. </p>
 <ul>
-You have been to <%= places.count %> places.
+  for place in places
 
 </ul>
