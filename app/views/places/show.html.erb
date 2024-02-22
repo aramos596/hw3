@@ -4,23 +4,24 @@
 
 <ul>
   <% for entry in @entries %>
-    <li>
-      <a href="/entries/<%= entry["id"] %>">
-        <%= contact["title"] %>
-      </a>
-    </li>
+    <h2><%= entry["title"] %></h2>
+    <p><%= entry["description"]%></p>
+    <p><%= entry["date_posted"]%></p>
+  
+ 
   <% end %>
 </ul>
 
-<p>
-  <a href="/contacts/new?company_id=<%= @company["id"] %>">New Contact</a>
+
+<p><a href="/entries/new">New Entry</a>
 </p>
 
-<p><a href="/companies">Back to All Companies</a></p>
 
-<p><a href="/companies/<%= @company["id"] %>/edit">Edit Company</a></p>
+<p><a href="/places">Back to Places I've Been</a></p>
 
-<form action="/companies/<%= @company["id"] %>" method="post">
+
+
+<form action="/places/<%= @place["id"] %>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <button>Delete Company</button>
+  <button>Delete Place</button>
 </form>
